@@ -4,17 +4,17 @@ from string_utils import StringUtils
 # Принимает на вход текст, делает первую букву заглавной и возвращает этот же текст
 # Пример: `capitilize("skypro") -> "Skypro"`
 
-@pytest.mark.positive_test_capitilize
+@pytest.mark.positive_test_capitalize
 @pytest.mark.parametrize('num, result', [('привет', 'Привет'), ('hello', 'Hello'), ('как дела', 'Как дела'),('111', '111')])
-def test_capitilize_positive(num, result):
+def test_capitalize_positive(num, result):
     utils = StringUtils()
     res = utils.capitalize(num)
     assert res == result
 
 @pytest.mark.xfail
-@pytest.mark.negative_test_capitilize
+@pytest.mark.negative_test_capitalize
 @pytest.mark.parametrize('line, result', [("", ""), (" ", " "), (None, None),(333, 333)])
-def test_negative_capitilize(line, result):
+def test_negative_capitalize(line, result):
     utils = StringUtils()
     res = utils.capitalize(line)
     assert res == result
