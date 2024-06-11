@@ -8,7 +8,7 @@ from string_utils import StringUtils
 @pytest.mark.parametrize('num, result', [('привет', 'Привет'), ('hello', 'Hello'), ('как дела', 'Как дела'),('111', '111')])
 def test_capitilize_positive(num, result):
     utils = StringUtils()
-    res = utils.capitilize(num)
+    res = utils.capitalize(num)
     assert res == result
 
 @pytest.mark.xfail
@@ -16,7 +16,7 @@ def test_capitilize_positive(num, result):
 @pytest.mark.parametrize('line, result', [("", ""), (" ", " "), (None, None),(333, 333)])
 def test_negative_capitilize(line, result):
     utils = StringUtils()
-    res = utils.capitilize(line)
+    res = utils.capitalize(line)
     assert res == result
 
 # Принимает на вход текст и удаляет пробелы в начале, если они есть
