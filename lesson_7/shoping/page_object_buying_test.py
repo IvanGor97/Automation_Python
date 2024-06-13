@@ -11,7 +11,7 @@ def test_buying_process():
     page.authorization("standard_user", "secret_sauce")
     page.add_products()
     page.go_to_cart()
-    page.personal_data("Юрий", "Перевощиков", "123456")
+    page.personal_data("ИВАН", "Горбунов", "123456")
     total = page.total_cost()
     assert total == "Total: $58.29", f"Expected total to be 'Total: $58.29' but got '{total}'"
     
